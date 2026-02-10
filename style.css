@@ -401,3 +401,44 @@ input:focus,textarea:focus{
 /* push page content so header doesn't overlap */
 body{ padding-top: 92px; }
 @media (max-width:768px){ body{ padding-top: 74px; } }
+
+
+/* === VISITKORT-BLENDED LOGO (TEXT + MARK ONLY) === */
+.site-header{
+  position: absolute;
+  top: 0; left: 0; width: 100%;
+  z-index: 40;
+  pointer-events: none;
+}
+
+.site-header__inner{
+  padding: 42px 48px;
+}
+
+.site-logo{
+  width: 220px;
+  pointer-events: auto;
+  opacity: .55;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
+}
+
+.site-logo svg{
+  width: 100%;
+  height: auto;
+}
+
+/* Smooth entrance */
+.site-logo{
+  animation: logoFadeIn .8s ease forwards;
+}
+@keyframes logoFadeIn{
+  from{ opacity:0; transform: translateY(6px); }
+  to{ opacity:.55; transform: translateY(0); }
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .site-header__inner{ padding: 26px 22px; }
+  .site-logo{ width: 160px; opacity:.6; }
+}

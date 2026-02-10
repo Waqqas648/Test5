@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fascinating-donut-2b4bc0.netlify.app/sitemap.xml
